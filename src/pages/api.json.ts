@@ -10,9 +10,7 @@ const handler = async (_: Request) => {
   return {
     handle: config.bluesky,
     profile: `https://bsky.app/profile/${config.bluesky}`,
-    history: bluesky
-      .sort()
-      .map(({ data: { date, ...data } }) => ({ [date]: data })),
+    history: bluesky.sort().map(({ data }) => data),
   };
 };
 
