@@ -1,0 +1,30 @@
+name: sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 03 1 * *"
+
+jobs:
+  bluesky:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.REPO_TOKEN }}
+
+      - uses: ./.github/actions/install
+
+      - run: pnpm sync:bluesky
+
+      - name: Commit
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: GitHub Actions
+          author_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: "chore: update data/bluesky [ci skip]"
+          add: "src/data/bluesky"
+          push: origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
