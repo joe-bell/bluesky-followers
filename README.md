@@ -24,7 +24,7 @@ This project is a tiny static [Astro](https://astro.build) app that stores value
 4. Replace `src/config.ts`'s `bluesky` value with your own handle
 5. Adjust the `cron` schedule in [`workflows/sync.yml`](./.github/workflows/sync.yml) if necessary
 
-   _By default, it runs at 03:00 on the first day of every month (avoiding 00:00 traffic of other cron-based actions)_
+   _By default, it runs at 03:00 everyday (avoiding 00:00 traffic of other cron-based actions)_
 
 6. Deploy to your preferred service!
 
