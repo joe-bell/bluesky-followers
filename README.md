@@ -2,10 +2,6 @@
 
 Statically self-hosted historical followers data for Bluesky 🦋
 
-## Demo
-
-[bluesky-followers.joebell.studio](https://bluesky-followers.joebell.studio/)
-
 ## Overview
 
 [Bluesky's API](https://docs.bsky.app/docs/api/app-bsky-actor-get-profile) offers public access to a user's `followersCount` and `followsCount` without authentication; however, there's no way to track these values over time.
